@@ -11,6 +11,11 @@ if [ ! -f images/sample-bottle.jpg ]; then
 fi
 
 echo "Running K-Serve client demo"
+
+echo "Predict with MaskRCNN"
 docker run -it --net host -v `pwd`/scripts:/scripts -v `pwd`/images:/images ovms-client:latest bash -c /scripts/run_grpc_kserv_maskrcnn-predict.sh
+
+echo "Predict with BiT"
+docker run -it --net host -v `pwd`/scripts:/scripts -v `pwd`/images:/images ovms-client:latest bash -c /scripts/run_grpc_kserv_bit-predict.sh
 
 
