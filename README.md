@@ -7,6 +7,8 @@ This example demonstrates how to utilize the Intel OpenVINO Model Server (OVMS) 
 
 ./build-server.sh - builds the container image for an OVMS server
 
+./download_models.sh - downloads https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/instance-segmentation-security-1040 for MaskRCNN instance segmentation. Note this does not download BiT. BiT model conversion to OpenVINO and the resulting .xml and .bin files need to be copied to "models/BiT_M_R50x1_10C_50e_IR/FP16-INT8/1"  before proceeding to the next steps.
+
 ## Start OVMS Server in a Docker Container
 
 ./run-server.sh - this script will start OVMS with a config.json file which loads the MaskRCNN and BiT models with Intel OpenVINO and a system with Intel discrete GPUs.
